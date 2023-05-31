@@ -11,14 +11,14 @@ void _balance(avl_t *tree, int value)
 	int balance;
 
 	balance = binary_tree_balance(tree);
-	if (balance > 1 &&  value < tree->left->n)
+	if (tree->left && > 1 &&  value < tree->left->n)
 		binary_tree_rotate_right(tree);
-	if (balance > 1 && value > tree->left->n)
+	if (tree->left && balance > 1 && value > tree->left->n)
 	{
 		binary_tree_rotate_left(tree->left);
 		binary_tree_rotate_right(tree);
 	}
-	if (balance < -1 && value > tree->right->n)
+	if (tree->right && balance < -1 && value > tree->right->n)
 		binary_tree_rotate_left(tree);
 	if (tree->right && balance < -1 && value < tree->right->n)
 	{
