@@ -30,7 +30,7 @@ avl_t *avl_insert_recursive(avl_t **tree, avl_t *parent,
 			return (NULL);
 	}
 	else
-		return (*tree);
+		return (*node = *tree);
 
 	balance = binary_tree_balance(*tree);
 	if (balance > 1 && value < (*tree)->left->n)
